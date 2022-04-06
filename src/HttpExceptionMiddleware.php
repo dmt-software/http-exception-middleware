@@ -15,26 +15,7 @@ class HttpExceptionMiddleware implements MiddlewareInterface
 {
     protected ResponseFactoryInterface $responseFactory;
 
-    public function __construct(ResponseFactoryInterface $responseFactory = null)
-    {
-        if (!is_null($responseFactory)) {
-            $this->setResponseFactory($responseFactory);
-        }
-    }
-
-    /**
-     * @return ResponseFactoryInterface
-     */
-    protected function getResponseFactory(): ResponseFactoryInterface
-    {
-        return $this->responseFactory;
-    }
-
-    /**
-     * @param ResponseFactoryInterface $responseFactory
-     * @return void
-     */
-    public function setResponseFactory(ResponseFactoryInterface $responseFactory): void
+    public function __construct(ResponseFactoryInterface $responseFactory)
     {
         $this->responseFactory = $responseFactory;
     }
@@ -49,7 +30,7 @@ class HttpExceptionMiddleware implements MiddlewareInterface
         try {
             return $handler->handle($request);
         } catch(\HttpException\Exception $httpException) {
-            return $this->getResponseFactory()->createResponse($httpException->getCode(), $httpException->getMessage());
+            return $this->responseFactory->createResponse($httpException->getCode(), $httpException->getMessage());
         }
     }
 }
