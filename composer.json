@@ -1,0 +1,27 @@
+{
+    "name": "dmt-software/http-exception-middleware",
+    "description": "psr-15 http exception middleware",
+    "require": {
+        "pavelsterba/http-exceptions": "^1.1",
+        "psr/http-server-middleware": "^1.0",
+        "psr/http-factory": "^1.0",
+        "psr/http-message": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "guzzlehttp/psr7": "^2.2"
+    },
+    "license": "mit",
+    "authors": [
+        {
+            "name": "lingo",
+            "email": "lingo@de-mes.nl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"DMT\\Http\\Exception\\Middleware\\": "src"}
+    },
+    "autoload-dev": {
+        "psr-4": {"DMT\\Http\\Exception\\Middleware\\": "test"}
+    }
+}
