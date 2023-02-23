@@ -1,7 +1,8 @@
 <?php
 
-namespace DMT\Http\Exception\Middleware;
+namespace DMT\Test\Http\Exception\Middleware;
 
+use DMT\Http\Exception\Middleware\HttpExceptionMiddleware;
 use HttpException\BadRequestException;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseFactoryInterface;
