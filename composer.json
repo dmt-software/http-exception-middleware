@@ -16,6 +16,10 @@
     {
       "name": "lingo",
       "email": "lingo@de-mes.nl"
+    },
+    {
+      "name": "Bas de Mes",
+      "email": "bas@dmt-software.nl"
     }
   ],
   "autoload": {
